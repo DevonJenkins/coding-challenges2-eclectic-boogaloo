@@ -88,9 +88,9 @@ sumNumbers([]) //=> 0
 -----------------------------------------------------------------------------*/
 // Your solution for 03-sumNumbers here:
 
-
-
-
+function sumNumbers(numArr){
+  return numArr.reduce((a,b) => a+b, 0)
+}
 
 /*-----------------------------------------------------------------------------
 Challenge: 04-addList
@@ -110,9 +110,15 @@ add(1,50,1.23) //=> 52.23
 add(7,-12) //=> -5
 -----------------------------------------------------------------------------*/
 // Your solution for 04-addList here:
+function addList(){
 
-
-
+  let sum = 0
+  for (let i=0; arguments.length > i; i++){
+    sum += arguments[i]
+  }
+  // nums ? nums.toString().split(',') : sum
+  return sum
+}
 
 
 /*-----------------------------------------------------------------------------
@@ -134,8 +140,15 @@ computeRemainder(4,0) //=> Infinity
 computeRemainder(10.5, 3) //=> 1.5
 -----------------------------------------------------------------------------*/
 // Your solution for 05-computeRemainder:
-
-
+function computeRemainder(num1, num2){
+  q = parseInt(num1/num2)
+  p = parseInt(q * num2)
+  modulo = num1 - p 
+  if (num2 == 0){
+    return Infinity
+  }
+  return modulo  
+}
 
 
 
