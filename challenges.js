@@ -297,7 +297,17 @@ isPalindrome(''); //=> true
 -----------------------------------------------------------------------------*/
 // Your solution for 11-isPalindrome here:
 
-
+function isPalindrome(str){
+  str = str.split(" ").join("").toLowerCase() 
+  console.log('string: ', str)
+  reversedString = str.split(" ").join("").split("").reverse().join("").toLowerCase()
+  console.log('reversed string: ', reversedString)
+  if( str.toLowerCase() === reversedString){
+    return true
+  } else {
+    return false 
+  }
+}
 
 
 
