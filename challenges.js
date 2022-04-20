@@ -140,7 +140,9 @@ computeRemainder(4,0) //=> Infinity
 computeRemainder(10.5, 3) //=> 1.5
 -----------------------------------------------------------------------------*/
 // Your solution for 05-computeRemainder:
+
 function computeRemainder(num1, num2){
+  console.log(num1, num2)
   q = parseInt(num1/num2)
   p = parseInt(q * num2)
   modulo = num1 - p 
@@ -149,8 +151,6 @@ function computeRemainder(num1, num2){
   }
   return modulo  
 }
-
-
 
 /*-----------------------------------------------------------------------------
 Challenge: 06-range
@@ -171,15 +171,7 @@ range(5,2) //=> "First argument must be less than second"
 -----------------------------------------------------------------------------*/
 // Your solution for 06-range here:
 
-// function range(argOne, argTwo){
-//   let ans = [];
-    
-//   for(let i = argOne; i <= argTwo; i++){
-//     ans.push(i);
-//   }
-//   return ans;
 
-// }
 function range(start, end) {
   if (start > end) {return "First argument must be less than second"}
   var ans = [];
@@ -206,11 +198,9 @@ reverseUpcaseString("SEI Rocks!"); //=> "!SKCOR IES"
 -----------------------------------------------------------------------------*/
 // Your solution for 07-reverseUpcaseString here:
 
-
 function reverseUpcaseString(string){
     return string.split("").reverse().join("").toUpperCase()
 }
-
 
 /*-----------------------------------------------------------------------------
 Challenge: 08-removeEnds
@@ -228,7 +218,6 @@ removeEnds('SEI Rocks!'); //=> "EI Rocks"
 removeEnds('a'); //=> "" (empty string)
 -----------------------------------------------------------------------------*/
 // Your solution for 08-removeEnds here:
-
 
 function removeEnds(str){
   return str.slice(1, str.length - 1);
@@ -259,8 +248,6 @@ function charCount(str) {
   return [...str].reduce((m,c) => (m[c] = (m[c] || 0) + 1, m), {})
   }
 
-
-
 /*-----------------------------------------------------------------------------
 Challenge: 10-formatWithPadding
 
@@ -282,10 +269,12 @@ formatWithPadding(42, '*', 10); //=> "********42"
 formatWithPadding(1234, '*', 3); //=> "1234"
 -----------------------------------------------------------------------------*/
 // Your solution for 10-formatWithPadding here:
+//if length > num.length then pad num with str. 
+// for (let i = 0, i < length, i+str)
 
-
-
-
+function formatWithPadding(num, str, length){
+  return num.toString().padStart(length, str)
+}
 
 /*-----------------------------------------------------------------------------
 Challenge: 11-isPalindrome
