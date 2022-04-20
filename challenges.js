@@ -255,7 +255,9 @@ charCount('Today is fantastic!') //=> { T: 1, o: 1, d: 1, a: 3, y: 1, ' ': 2, i:
 -----------------------------------------------------------------------------*/
 // Your solution for 09-charCount here:
 
-
+function charCount(str) {
+  return [...str].reduce((m,c) => (m[c] = (m[c] || 0) + 1, m), {})
+  }
 
 
 
@@ -267,9 +269,9 @@ Difficulty: Basic
 Prompt:
 
 - Write a function called formatWithPadding that accepts three arguments:
-  - A numeric argument (an integer) representing the number to format.
-  - A string argument (a single character) representing the character used to "pad" the returned string to a minimum length.
-  - Another numeric argument (an integer) representing the length to "pad" the returned string to.
+- A numeric argument (an integer) representing the number to format.
+- A string argument (a single character) representing the character used to "pad" the returned string to a minimum length.
+- Another numeric argument (an integer) representing the length to "pad" the returned string to.
 - The function should return the integer as a string, "left padded" to the length of the 3rd arg using the character provided in the 2nd arg.
 - If the length of the integer converted to a string is equal or greater than the 3rd argument, no padding is needed - just return the integer as a string.
 
