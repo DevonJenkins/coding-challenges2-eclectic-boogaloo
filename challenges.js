@@ -142,7 +142,6 @@ computeRemainder(10.5, 3) //=> 1.5
 // Your solution for 05-computeRemainder:
 
 function computeRemainder(num1, num2){
-  console.log(num1, num2)
   q = parseInt(num1/num2)
   p = parseInt(q * num2)
   modulo = num1 - p 
@@ -332,7 +331,6 @@ hammingDistance('abc', 'ab'); //=> NaN
 // Your solution for 12-hammingDistance here:
 
 function hammingDistance(str1, str2){
-  console.log(str1)
   let ans = 0 
   if (str1.length != str2.length){
     return NaN
@@ -341,10 +339,7 @@ function hammingDistance(str1, str2){
     if (str1[i] != str2[i]){
       ans += 1
     }
-  console.log(str1[i])
-  console.log(str2[i])
   }
-  console.log(ans)
   return ans
   }
 }
@@ -371,7 +366,18 @@ mumble('!A 2'); //=> '!-AA-   -2222'
 -----------------------------------------------------------------------------*/
 // Your solution for 13-mumble here:
 
+//iterate over each letter in the string
+//for each letter, determine the index of that letter
+//then return that letter until its count matches that of the letters index. 
 
+
+function mumble(string){
+  ans = []
+  for (let i = 0; i < string.length; i++){
+      (ans.push(string[i].repeat(i + 1)))
+    }
+    return(ans.join("-"))
+  }
 
 
 
