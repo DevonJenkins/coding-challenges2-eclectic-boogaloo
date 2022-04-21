@@ -299,9 +299,7 @@ isPalindrome(''); //=> true
 
 function isPalindrome(str){
   str = str.split(" ").join("").toLowerCase() 
-  console.log('string: ', str)
   reversedString = str.split(" ").join("").split("").reverse().join("").toLowerCase()
-  console.log('reversed string: ', reversedString)
   if( str.toLowerCase() === reversedString){
     return true
   } else {
@@ -333,8 +331,24 @@ hammingDistance('abc', 'ab'); //=> NaN
 -----------------------------------------------------------------------------*/
 // Your solution for 12-hammingDistance here:
 
-
-
+function hammingDistance(str1, str2){
+  console.log(str1)
+  let ans = 0 
+  if (str1.length != str2.length){
+    return NaN
+  } else { 
+  for (let i = 0; i < str1.length; i++){
+    if (str1[i] != str2[i]){
+      ans += 1
+    }
+  console.log(str1[i])
+  console.log(str2[i])
+  }
+  console.log(ans)
+  return ans
+  }
+}
+hammingDistance('banana', 'bonona')
 
 
 /*-----------------------------------------------------------------------------
