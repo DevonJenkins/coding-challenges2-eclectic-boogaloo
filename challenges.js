@@ -400,7 +400,9 @@ fromPairs([ ['name', 'Sam"], ['age', 24], ['name', 'Sally'] ]) //=> { name: "Sal
 // Your solution for 14-fromPairs here:
 
 
-
+function fromPairs(arr){
+  return Object.fromEntries(arr)
+}
 
 
 /*-----------------------------------------------------------------------------
@@ -421,7 +423,10 @@ mergeObjects({a: 1, b: 2, c: 3}, {d: 4}, {b: 22, d: 44}); //=> {a: 1, b: 22, c: 
 -----------------------------------------------------------------------------*/
 // Your solution for 15-mergeObjects here:
 
-
+function mergeObjects(target, ...objects){
+  let mergedObject = Object.assign(target, ...objects)
+  return mergedObject
+}
 
 
 
