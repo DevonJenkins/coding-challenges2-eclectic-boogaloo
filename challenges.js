@@ -508,7 +508,9 @@ mapArray( ['rose', 'tulip', 'daisy'], function(f, i) {
 
 function mapArray(arr, cb){
   const newArr = []
-  arr.forEach()
+  arr.forEach(function(element, idx) {
+    newArr.push( cb(element, idx))
+  })
   return newArr
 }
 
