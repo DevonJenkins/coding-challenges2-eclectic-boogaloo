@@ -555,7 +555,6 @@ function reduceArray(arr, cb, initAcc){
   arr.forEach(function(element, idx){
     acc = cb(acc, element, idx)
   })
-  console.log(acc)
   return acc
 }
 
@@ -588,6 +587,21 @@ flatten( [1, [2, [3, [4]]], 1, 'a', ['b', 'c']] );
 -----------------------------------------------------------------------------*/
 // Your solution for 19-flatten here:
 
+function flatten(arr){
+  let flattenedArray = [];
+  //iterate over each element in array
+  arr.forEach(el => {
+    //check if its an array. if it is, flatten it, and push the flattened el into flattened arr. 
+    if(Array.isArray(el)){
+      const result = flatten(el);
+      result.forEach(el => flattenedArray.push(el))
+    } else {
+      //if not array then push into flattened arr g
+      flattenedArray.push(el);
+    }
+  })
+  return flattenedArray
+}
 
 
 
@@ -613,6 +627,31 @@ isPrime(200) //=> false
 // Your solution for 20-isPrime here:
 
 
+
+function isPrime(number)
+{ 
+  if (number <= 1)
+  return false;
+
+  // The check for the number 2 and 3
+  if (number <= 3)
+  return true;
+
+  if (number % 1 != 0 )
+  return false
+
+  if ((number%2 == 0 || number%3 == 0))
+  return false;
+
+  for (var i=5; i*i<=number; i=i+6)
+  {
+      if ((number%i == 0 || number%(i+2) == 0) ) 
+      
+      return false;
+  }
+
+  return true;
+}
 
 
 
