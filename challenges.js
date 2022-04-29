@@ -693,10 +693,8 @@ function primeFactors(num){
         divisor ++
       }
     }
-    // return array of prime factors 
   }
   return factors
-
 }
 
 
@@ -722,9 +720,24 @@ intersection([1, 'a', true, 1, 1], [true, 1, 'b', 1]) //=> [1, true, 1]
 -----------------------------------------------------------------------------*/
 // Your solution for 22-intersection here:
 
+function intersection(arr1, arr2){
+  let newArr = []
+  console.log("arr1:", arr1)
+  console.log("arr2:", arr2)
 
+  arr2.forEach((num1) => {
+    if(arr1.includes(num1)){
+      newArr.push(num1)
+    }
+    }
+  )
+  console.log(newArr)
+  return newArr
+}
 
-
+let arr1 = [1, 2, 3, 4]
+let arr2 = [1, 2, 3, 4]
+intersection(arr1, arr2)
 
 /*-----------------------------------------------------------------------------
 Challenge: 23-balancedBrackets
