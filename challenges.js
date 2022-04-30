@@ -807,7 +807,9 @@ isWinningTicket( [ ['ABC', 66], ['dddd', 15], ['Hello', 108] ] ) // => false
 -----------------------------------------------------------------------------*/
 // Your solution for 24-isWinningTicket here:
 
-
+let isWinningTicket = () => {
+  
+}
 
 
 
