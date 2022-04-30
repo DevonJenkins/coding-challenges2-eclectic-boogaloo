@@ -761,7 +761,23 @@ balancedBrackets( '[({}[])]' ) // => true
 -----------------------------------------------------------------------------*/
 // Your solution for 23-balancedBrackets here:
 
+let balancedBrackets = (string) => {
+  let brackets = "[]{}()<>"
+  let stack = []
 
+  for(let bracket of string) {
+    let bracketsIndex = brackets.indexOf(bracket)
+
+    if(bracketsIndex % 2 === 0 ){
+      stack.push(bracketsIndex + 1)
+    } else {
+      if(stack.pop() !== bracketsIndex ){
+        return false; 
+      }
+    }
+  }
+  return stack.length === 0 
+}
 
 
 
