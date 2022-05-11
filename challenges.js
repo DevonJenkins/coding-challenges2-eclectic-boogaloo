@@ -722,8 +722,6 @@ intersection([1, 'a', true, 1, 1], [true, 1, 'b', 1]) //=> [1, true, 1]
 
 function intersection(arr1, arr2){
   let newArr = []
-  console.log("arr1:", arr1)
-  console.log("arr2:", arr2)
 
   arr2.forEach((num1) => {
     if(arr1.includes(num1)){
@@ -731,7 +729,7 @@ function intersection(arr1, arr2){
     }
     }
   )
-  console.log(newArr)
+
   return newArr
 }
 
@@ -762,6 +760,7 @@ balancedBrackets( '[({}[])]' ) // => true
 // Your solution for 23-balancedBrackets here:
 
 let balancedBrackets = (string) => {
+
   let brackets = "[]{}()<>"
   let stack = []
 
@@ -807,9 +806,12 @@ isWinningTicket( [ ['ABC', 66], ['dddd', 15], ['Hello', 108] ] ) // => false
 -----------------------------------------------------------------------------*/
 // Your solution for 24-isWinningTicket here:
 
-let isWinningTicket = () => {
-  
+
+ /* Arrow functions help make concise one-liners possible */
+function isWinningTicket(ticket){
+  return ticket.every(arr => arr[0].includes(String.fromCharCode(arr[1])));
 }
+
 
 
 
