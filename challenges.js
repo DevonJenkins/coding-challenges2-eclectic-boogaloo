@@ -842,25 +842,33 @@ getNumForIP( '10.0.0.1' ) // => 167772161
 // Your solution for 25-getNumForIP here:
 
 
-let getNumForIP = (string) => {
+let getNumForIP = (ip) => {
 
   //split the numbers by the decimal point and put them into something I can reverse 
   
-  //once reversed and pushed into an array, I will for loop the array and use the string[i] * (256 ** i) formula 
+  //once reversed and pushed into an array, I will for loop the array and use the ip[i] * (256 ** i) formula 
 
   //once all of the numbers in the array have been calculated, I may able to use reduce to sum them together. 
   
-  let splitIPs = string.split(".").reverse()
-  let IParr = [] 
+  // let splitIPs = ip.split(".").reverse()
+  // let IParr = [] 
   
-  for(let i = 0; i < splitIPs.length; i++){
-    IParr.push((splitIPs[i] * (256 ** i)))
-  }
-  let IPnum = IParr.reduce(function(a,b){
-    return a + b
-  })
+  // for(let i = 0; i < splitIPs.length; i++){
+  //   IParr.push((splitIPs[i] * (256 ** i)))
+  // }
+  // let IPnum = IParr.reduce(function(a,b){
+  //   return a + b
+  // })
 
-  return IPnum
+  // return IPnum
+
+  /*
+    refactored code
+  */
+
+let splitIp = ip.split(".").reverse().reduce((sum, word, idx) => sum + parseInt(word) * (256 ** idx ), 0 )
+  return splitIp
+
 }
 
 
@@ -894,23 +902,20 @@ let toCamelCase = (string) => {
 //then forEach the string and capitalize each word therein
 //if the string does not include - or  _ then simply return the string
   
-  if (string.includes('-') || string.includes('_')){
+
     string.includes('-') 
     ?
-    string = string.split('-')
+      string = string.split('-')
     : 
-    string = string.split('_')
-  } else {
-    return string
-  }
-  
+      string = string.split('_')
+
   for (let i = 1; i < string.length; i++){
 
     string[i] = string[i].charAt(0).toUpperCase() + string[i].substring(1)
 
   }
   string = string.join('')
-  console.log(string) 
+
   return string
 }
 
