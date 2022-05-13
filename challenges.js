@@ -844,6 +844,23 @@ getNumForIP( '10.0.0.1' ) // => 167772161
 
 let getNumForIP = (string) => {
 
+  //split the numbers by the decimal point and put them into something I can reverse 
+  
+  //once reversed and pushed into an array, I will for loop the array and use the num[i] * (256 ** i) formula 
+
+  //once all of the numbers in the array have been calculated, I may able to use reduce to sum them together. 
+  
+  let splitIPs = string.split(".").reverse()
+  let IParr = [] 
+  
+  for(let i = 0; i < splitIPs.length; i++){
+    IParr.push((splitIPs[i] * (256 ** i)))
+  }
+  let IPnum = IParr.reduce(function(a,b){
+    return a + b
+  })
+
+  return IPnum
 }
 
 
