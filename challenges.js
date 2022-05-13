@@ -846,7 +846,7 @@ let getNumForIP = (string) => {
 
   //split the numbers by the decimal point and put them into something I can reverse 
   
-  //once reversed and pushed into an array, I will for loop the array and use the num[i] * (256 ** i) formula 
+  //once reversed and pushed into an array, I will for loop the array and use the string[i] * (256 ** i) formula 
 
   //once all of the numbers in the array have been calculated, I may able to use reduce to sum them together. 
   
@@ -889,7 +889,30 @@ toCamelCase( 'A_b_c' ) // => 'ABC'
 -----------------------------------------------------------------------------*/
 // Your solution for 26-toCamelCase here:
 
+let toCamelCase = (string) => {
+//if the string includes - or underscore then split the string 
+//then forEach the string and capitalize each word therein
+//if the string does not include - or  _ then simply return the string
+  
+  if (string.includes('-') || string.includes('_')){
+    string.includes('-') 
+    ?
+    string = string.split('-')
+    : 
+    string = string.split('_')
+  } else {
+    return string
+  }
+  
+  for (let i = 1; i < string.length; i++){
 
+    string[i] = string[i].charAt(0).toUpperCase() + string[i].substring(1)
+
+  }
+  string = string.join('')
+  console.log(string) 
+  return string
+}
 
 
 
