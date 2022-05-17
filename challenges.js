@@ -901,7 +901,6 @@ let toCamelCase = (string) => {
 //if the string includes - or underscore then split the string 
 //then forEach the string and capitalize each word therein
 //if the string does not include - or  _ then simply return the string
-  
 
     string.includes('-') 
     ?
@@ -947,7 +946,14 @@ countTheBits( 65535 ) //=> 16
 -----------------------------------------------------------------------------*/
 // Your solution for 27-countTheBits here:
 
+let countTheBits = (num) => {
+  bits = []
+  binaryNum = num.toString(2)
+  console.log(binaryNum)
 
+  return (binaryNum.split('1').length-1)
+  
+}
 
 
 
