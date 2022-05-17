@@ -909,7 +909,6 @@ let toCamelCase = (string) => {
       string = string.split('_')
 
   for (let i = 1; i < string.length; i++){
-
     string[i] = string[i].charAt(0).toUpperCase() + string[i].substring(1)
 
   }
@@ -947,12 +946,13 @@ countTheBits( 65535 ) //=> 16
 // Your solution for 27-countTheBits here:
 
 let countTheBits = (num) => {
-  bits = []
-  binaryNum = num.toString(2)
-  console.log(binaryNum)
+  // bits = []
+  // binaryNum = num.toString(2)
+  // console.log(binaryNum)
 
-  return (binaryNum.split('1').length-1)
+  // return (binaryNum.split('1').length-1)
   
+  return (num.toString(2).match(/1/g) || []).length;
 }
 
 
@@ -982,7 +982,9 @@ gridTrip( [100, -22], 'L2L15D50U1D9') //=> [83, -80]
 -----------------------------------------------------------------------------*/
 // Your solution for 28-gridTrip here:
 
+let gridTrip = (arr, moves) => {
 
+}
 
 
 
