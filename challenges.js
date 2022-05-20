@@ -983,9 +983,7 @@ gridTrip( [100, -22], 'L2L15D50U1D9') //=> [83, -80]
 // Your solution for 28-gridTrip here:
 
 let gridTrip = (arr, moves) => {
-  console.log('array:', arr,'moves:', moves)
   let result = [arr[0], arr[1]]
-  console.log(arr[0], arr[1])
   const lookup = {'R': [0, 1], 'U': [1, 1], 'L': [0, -1], 'D': [1, -1]}; 
 
     moves = moves.match(/[UDLR]\d+/g);
@@ -1024,7 +1022,22 @@ addChecker( [10, 15, 16, 22], 19 ) // => false
 -----------------------------------------------------------------------------*/
 // Your solution for 29-addChecker here:
 
+let addChecker = (arr, int) => {
+  //this is fairly a inefficient solution 
+  sums = []
+  nums = []
+  idx = 0
 
+  arr.forEach((numX) => {
+    nums.push(numX)
+    nums.forEach((numY) => {
+      sums.push(numY + numX)
+    })
+  })
+  
+  result = (sums.includes(int) ?  true : false)
+  return result
+}
 
 
 
