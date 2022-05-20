@@ -983,7 +983,17 @@ gridTrip( [100, -22], 'L2L15D50U1D9') //=> [83, -80]
 // Your solution for 28-gridTrip here:
 
 let gridTrip = (arr, moves) => {
+  console.log('array:', arr,'moves:', moves)
+  let result = [arr[0], arr[1]]
+  console.log(arr[0], arr[1])
+  const lookup = {'R': [0, 1], 'U': [1, 1], 'L': [0, -1], 'D': [1, -1]}; 
 
+    moves = moves.match(/[UDLR]\d+/g);
+    moves.forEach((move) => {
+      var dir = move.charAt(0);
+      result[lookup[dir][0]] += move.substr(1) * lookup[dir][1];
+    })
+    return result
 }
 
 
