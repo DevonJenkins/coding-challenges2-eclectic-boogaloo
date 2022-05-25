@@ -1023,7 +1023,7 @@ addChecker( [10, 15, 16, 22], 19 ) // => false
 // Your solution for 29-addChecker here:
 
 let addChecker = (arr, int) => {
-  //this is fairly a inefficient solution 
+  //this is a fairly inefficient solution 
   sums = []
   nums = []
   idx = 0
@@ -1070,3 +1070,9 @@ totalTaskTime( [5, 2, 6, 8, 7, 2], 3 ) // => 12
 // Your solution for 30- here:
 
 
+//for each queued item, if there is a thread available, run the queued item through that thread
+
+
+  function totalTaskTime(tasks, numThreads) {
+  return tasks.length && Math.max(...tasks.reduce((b, t, i) => (b[b.indexOf(Math.min(...b))] += t) && b, tasks.splice(0, numThreads)));
+}
