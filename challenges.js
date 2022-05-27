@@ -1076,3 +1076,7 @@ totalTaskTime( [5, 2, 6, 8, 7, 2], 3 ) // => 12
   function totalTaskTime(tasks, numThreads) {
   return tasks.length && Math.max(...tasks.reduce((b, t, i) => (b[b.indexOf(Math.min(...b))] += t) && b, tasks.splice(0, numThreads)));
 }
+
+let thisIsACommit = () => {
+  console.log('hello')
+}
